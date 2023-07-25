@@ -11,7 +11,7 @@ import {
 
   import { Bar } from 'react-chartjs-2';
 
-export function MainChart(){
+export function MainChart({data}){
 
     ChartJS.register(
         CategoryScale,
@@ -27,7 +27,7 @@ export function MainChart(){
         plugins: {
           title: {
             display: true,
-            text: 'Chart.js Bar Chart - Stacked',
+            text: data.title
           },
         },
         elements: {
@@ -46,25 +46,38 @@ export function MainChart(){
         },
       };
       
-      const labels = ['Desktop', 'Phone'];
+      const labels = ['Desktop'];
       
        const item = {
         labels,
         datasets: [
           {
             label: 'Dataset 1',
-            data: [90, 10],
-            backgroundColor: 'rgb(255, 99, 132)',
+            data: [Number(data.range[0])],
+            backgroundColor: 'rgb(12 206 106)',
+            borderColor: 'rgb(255 255 255)',
+            borderWidth: 2
           },
           {
             label: 'Dataset 2',
-            data: [10, 10],
-            backgroundColor: 'rgb(75, 192, 192)',
+            data: [Number(data.range[1])],
+            backgroundColor: 'rgb(255 164 0)',
+            borderColor: 'rgb(255 255 255)',
+            borderWidth: 2
           },
+          {
+            label: 'Dataset 2',
+            data:[ Number(data.range[2])],
+            backgroundColor: 'rgb(255 78 67)',
+            borderColor: 'rgb(255 255 255)',
+            borderWidth: 2
+          },
+         
         ],
       };
 
       return (
+            
         <Bar options={options} data={item} />
       )
 }

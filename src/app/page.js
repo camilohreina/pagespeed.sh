@@ -1,43 +1,18 @@
-import { API_URL, API_KEY } from "./config";
 import { MainChart } from "./components/MainChart";
-
-import data from "./data/data.json";
-
-async function genericRequestCruxApi(requestBody) {
-  const endpoint = `${API_URL}records:queryRecord?key=${API_KEY}`;
-
-  try {
-    const response = await fetch(endpoint, {
-      method: "POST",
-      body: JSON.stringify(requestBody),
-    });
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    return error;
-  }
-}
-
-async function getRecordsByWebSite({ website }) {
-  try {
-    const data = await genericRequestCruxApi({
-      origin: website,
-    });
-    return data;
-  } catch (error) {
-    return error;
-  }
-}
+import { getRecordsByWebSite } from "./services/records";
 
 export default async function Home() {
-  console.log(data.largest_contentful_paint.histogram);
-
-  // const data  = await getRecordsByWebSite({website: 'https://google.com'})
-  // console.log(data.record.metrics.largest_contentful_paint)
-
+  const data = await getRecordsByWebSite({ website: "https://google.com" });
+  console.log(data);
   return (
-    <main className="flex  flex-col items-center justify-between p-24">
-      <MainChart />
+    <main className="flex container m-auto flex-col items-center">
+      <div className="w-full grid grid-cols-2 gap-4 m-auto justify-center items-center">
+        {data.map((item) => (
+          <div key={item.key} className="flex justify-center items-center">
+            <MainChart data={item} />
+          </div>
+        ))}
+      </div>
     </main>
   );
 }
