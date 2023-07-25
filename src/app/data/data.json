@@ -1,0 +1,10 @@
+{
+  "largest_contentful_paint": {
+    "histogram": [
+      { "start": 0, "end": 2500, "density": 0.9277855571114174 },
+      { "start": 2500, "end": 4000, "density": 0.034006801360271885 },
+      { "start": 4000, "density": 0.03820764152830535 }
+    ],
+    "percentiles": { "p75": 1069 }
+  }
+}
