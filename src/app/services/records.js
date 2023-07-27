@@ -28,12 +28,11 @@ export async function getRecordsByWebSite({ website }) {
         key: metric,
         title: convertToCamelCase(metric),
         histogram: metrics[metric].histogram,
-        range: metrics[metric].histogram.map((item) =>
-          (item.density * 100).toFixed(2)
-        ),
+        range: metrics[metric].histogram.map((item) => item.density * 100),
+        p75: metrics[metric].percentiles.p75,
       });
     }
-    console.log(metricsRecord);
+
     return metricsRecord;
   } catch (error) {
     return error;
