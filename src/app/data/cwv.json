@@ -1,26 +1,32 @@
 {
   "largest_contentful_paint": {
     "title": "Largest Contentful Paint (LCP)",
-    "description": "LCP reports the render time of the largest content element that is visible within the viewport."
+    "description": "LCP reports the render time of the largest content element that is visible within the viewport.",
+    "icon": "lcp.png"
   },
   "cumulative_layout_shift": {
     "title": "Cumulative Layout Shift (CLS)",
-    "description": "CLS measures the sum total of all individual layout shift scores for every unexpected layout shift that occurs during the entire lifespan of the page."
+    "description": "CLS measures the sum total of all individual layout shift scores for every unexpected layout shift that occurs during the entire lifespan of the page.",
+    "icon": "cls.png"
   },
   "interaction_to_next_paint": {
     "title": "Interaction To Next Paint (INP)",
-    "description": " INP assesses responsiveness using data from the Event Timing API. When an interaction causes a page to become unresponsive, that is a poor user experience."
+    "description": "INP assesses responsiveness using data from the Event Timing API. When an interaction causes a page to become unresponsive, that is a poor user experience.",
+    "icon": "inp.png"
   },
   "experimental_time_to_first_byte": {
     "title": "Time To First Byte (TTFB)",
-    "description": "TTFB is a foundational metric for measuring connection setup time and web server responsiveness in both the lab and the field. It helps identify when a web server is too slow to respond to requests."
+    "description": "TTFB is a foundational metric for measuring connection setup time and web server responsiveness in both the lab and the field. It helps identify when a web server is too slow to respond to requests.",
+    "icon": "ttfb.png"
   },
   "first_contentful_paint": {
     "title": "First Contentful Paint",
-    "description": "FCP is an important, user-centric metric for measuring perceived load speed because it marks the first point in the page load timeline where the user can see anything on the screen—a fast FCP helps reassure the user that something is happening."
+    "description": "FCP is an important, user-centric metric for measuring perceived load speed because it marks the first point in the page load timeline where the user can see anything on the screen—a fast FCP helps reassure the user that something is happening.",
+    "icon": "fcp.png"
   },
   "first_input_delay": {
     "title": "First Input Delay (FID)",
-    "description": "FID measures the time from when a user first interacts with a page (i.e. when they click a link, tap on a button, or use a custom, JavaScript-powered control) to the time when the browser is actually able to respond to that interaction."
+    "description": "FID measures the time from when a user first interacts with a page (i.e. when they click a link, tap on a button, or use a custom, JavaScript-powered control) to the time when the browser is actually able to respond to that interaction.",
+    "icon": "fid.png"
   }
 }

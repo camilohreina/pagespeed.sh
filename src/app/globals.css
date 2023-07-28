@@ -25,3 +25,13 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.containerFluid {
+  max-width: 960px;
+  width: calc(100% - 48px);
+  margin: auto;
+  padding: 24px;
+  padding-top: 8px;
+  flex-grow: 1;
+  min-width: 344px;
+}
