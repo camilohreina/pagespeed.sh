@@ -1,3 +1,4 @@
+import { ToggleMode } from "@/components/ToggleMode";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
@@ -11,7 +12,21 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} dark:bg-black bg-slate-200`}>
+        <main className="containerFluid mt-8">
+          <div className="flex justify-between items-center">
+            <img
+              width={25}
+              className="dark:invert"
+              src="/icons/icon-github.svg"
+              alt="Github"
+            />
+            <p className=" font-bold text-2xl  dark:text-white">PageSpeed.sh</p>
+            <ToggleMode />
+          </div>
+          {children}
+        </main>
+      </body>
     </html>
   );
 }

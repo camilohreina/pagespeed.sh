@@ -30,10 +30,8 @@ export async function getRecordsByWebSite({ website }) {
     const { metrics } = data.record;
     let metricsRecord = [];
     for (let metric in metrics) {
-      console.log(metrics[metric].histogram);
       const time = metrics[metric].percentiles.p75;
-      console.log(time);
-      console.log("---------");
+
       metricsRecord.push({
         key: metric,
         title: convertToCamelCase(metric),
