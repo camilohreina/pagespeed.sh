@@ -1,6 +1,7 @@
 import { API_URL, API_KEY } from "./../config";
-import { convertToCamelCase } from "../utils/stringFormat";
+import { convertToCamelCase } from "../utils/helperFunctions";
 async function genericRequestCruxApi(requestBody) {
+  console.log(API_URL);
   const endpoint = `${API_URL}records:queryRecord?key=${API_KEY}`;
 
   try {
@@ -18,6 +19,7 @@ async function genericRequestCruxApi(requestBody) {
 
 export async function getRecordsByWebSite({ website }) {
   try {
+    console.log(website);
     const data = await genericRequestCruxApi({
       origin: website,
     });

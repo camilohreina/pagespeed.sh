@@ -1,6 +1,26 @@
+"use client";
+import { useState } from "react";
+import { formatURL, isValidURL } from "../app/utils/helperFunctions";
+
 export function SearchBar() {
+  const [url, setUrl] = useState("");
+
+  const handleBlur = (event) => {
+    const newSearch = event.target.value;
+    const newURL = formatURL(newSearch);
+    const validUrl = isValidURL(newSearch);
+    if (validUrl) {
+      setUrl(newURL);
+    }
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    window.location.href = `/report?url=${url}`;
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <label
         for="default-search"
         className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
@@ -26,6 +46,7 @@ export function SearchBar() {
           </svg>
         </div>
         <input
+          onBlur={handleBlur}
           type="search"
           id="default-search"
           className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"

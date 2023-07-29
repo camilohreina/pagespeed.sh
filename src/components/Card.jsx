@@ -1,5 +1,5 @@
 import { BarChart } from "./BarChart";
-import metrics from "../data/cwv.json";
+import metrics from "../app/data/cwv.json";
 export function Card({ data }) {
   const item = metrics[data.key];
   return (
