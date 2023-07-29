@@ -1,6 +1,7 @@
 import { getRecordsByWebSite } from "./services/records";
 import { Card } from "./components/Card.jsx";
 import { SearchBar } from "./components/SearchBar";
+import { Spinner } from "./components/Spinner";
 
 export default async function Home() {
   const data = await getRecordsByWebSite({ website: "https://google.com" });
@@ -13,6 +14,7 @@ export default async function Home() {
           <Card key={item.key} data={item} />
         ))}
       </div>
+      <Spinner />
     </main>
   );
 }
