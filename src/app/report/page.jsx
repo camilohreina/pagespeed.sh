@@ -4,7 +4,6 @@ import { Card } from "@/components/Card";
 import ErrorPage from "@/components/ErrorPage";
 
 export default async function Report({ searchParams }) {
-  console.log("llegando");
   let data = null;
   const { url } = searchParams;
 

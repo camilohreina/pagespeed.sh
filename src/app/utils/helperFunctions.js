@@ -17,7 +17,6 @@ export function formatURL(url) {
     }
     // Attempt to format the URL
     const urlObj = new URL(url);
-    console.log(urlObj);
     // If it doesn't have a scheme, add "https://"
     if (!urlObj.protocol.startsWith("http")) {
       urlObj.protocol = "https:";
