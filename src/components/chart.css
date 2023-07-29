@@ -37,8 +37,18 @@
   white-space: nowrap;
 }
 .LR2yK {
-  color: #018642;
-  font-size: small;
+  font-size: 1rem;
+}
+.approved {
+  color: #0cce6a;
+}
+
+.warning {
+  color: #ffa400;
+}
+
+.error {
+  color: #ff4e43;
 }
 .Ykn2A {
   font-weight: 500;

@@ -46,3 +46,30 @@ export function isValidURL(url) {
 
   return urlPattern.test(url);
 }
+
+export function formatTimeSeconds(time) {
+  if (time == 0) {
+    return "0";
+  } else if (time >= 1000) {
+    const seconds = time / 1000;
+    return `${seconds.toFixed(1)} s`;
+  } else {
+    return `${time} ms`;
+  }
+}
+
+export function getClassByRange(time, range) {
+  const classes = {
+    0: "approved",
+    1: "warning",
+    2: "error",
+  };
+
+  if (range?.length) {
+    for (let index = 0; index < range.length; index++) {
+      if (time <= range[index]) {
+        return classes[index];
+      }
+    }
+  }
+}

@@ -7,7 +7,9 @@ export function BarChart({ data }) {
       <div className="cOTkPe">
         <span className="DyTaId xTnkAf">
           <span className="f49ZR">
-            <span className="Ykn2A LR2yK">36&nbsp;ms</span>
+            <span className={`Ykn2A LR2yK ${data?.time?.className}`}>
+              {data?.time?.format}
+            </span>
           </span>
         </span>
       </div>
