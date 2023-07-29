@@ -1,11 +1,19 @@
+"use client";
 import { BarChart } from "./BarChart";
 import metrics from "../app/data/cwv.json";
+import { motion } from "framer-motion";
+
 export function Card({ data }) {
   const item = metrics[data.key];
   return (
     <>
       {item && (
-        <div className=" p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <motion.main
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0, transition: { delay: 0.3 } }}
+          exit={{ opacity: 0, y: 20 }}
+          className=" p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+        >
           <img
             className="dark:invert"
             src={`./icons/${item?.icon}`}
@@ -20,7 +28,7 @@ export function Card({ data }) {
           <div className="mt-12">
             <BarChart data={data} />
           </div>
-        </div>
+        </motion.main>
       )}
     </>
   );

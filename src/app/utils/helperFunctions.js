@@ -72,4 +72,5 @@ export function getClassByRange(time, range) {
       }
     }
   }
+  return "error";
 }

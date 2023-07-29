@@ -36,7 +36,7 @@ export function SearchBar() {
   };
 
   return (
-    <form className="w-full">
+    <div className="w-full">
       <label
         htmlFor="default-search"
         className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
@@ -81,6 +81,6 @@ export function SearchBar() {
         </Link>
       </div>
       {error && <span className="text-red-500">Invalid URL</span>}
-    </form>
+    </div>
   );
 }

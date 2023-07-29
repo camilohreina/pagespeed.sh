@@ -5,15 +5,18 @@ import {
   getClassByRange,
 } from "../utils/helperFunctions";
 async function genericRequestCruxApi(requestBody) {
-  console.log(API_URL);
   const endpoint = `${API_URL}records:queryRecord?key=${API_KEY}`;
 
   try {
-    const response = await fetch(endpoint, {
-      method: "POST",
-      formFactor: ["PHONE", "DESKTOP"],
-      body: JSON.stringify(requestBody),
-    });
+    const response = await fetch(
+      endpoint,
+      {
+        method: "POST",
+        formFactor: ["PHONE", "DESKTOP"],
+        body: JSON.stringify(requestBody),
+      },
+      { cache: "no-store" }
+    );
     const data = await response.json();
     return data;
   } catch (error) {
@@ -23,7 +26,6 @@ async function genericRequestCruxApi(requestBody) {
 
 export async function getRecordsByWebSite({ website }) {
   try {
-    console.log(website);
     const data = await genericRequestCruxApi({
       origin: website,
     });
@@ -33,6 +35,7 @@ export async function getRecordsByWebSite({ website }) {
       const time = metrics[metric].percentiles.p75;
 
       metricsRecord.push({
+        id: crypto.randomUUID(),
         key: metric,
         title: convertToCamelCase(metric),
         time: {
