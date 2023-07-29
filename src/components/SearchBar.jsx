@@ -3,7 +3,8 @@ import { useState } from "react";
 import { formatURL, isValidURL } from "../app/utils/helperFunctions";
 
 export function SearchBar() {
-  const [url, setUrl] = useState("");
+  const [url, setUrl] = useState(null);
+  const [error, setError] = useState(null);
 
   const handleBlur = (event) => {
     const newSearch = event.target.value;
@@ -11,18 +12,32 @@ export function SearchBar() {
     const validUrl = isValidURL(newSearch);
     if (validUrl) {
       setUrl(newURL);
+      setError(null);
+    } else {
+      invalidUrl();
+    }
+  };
+
+  const invalidUrl = () => {
+    {
+      setError("Invalid URL");
     }
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    window.location.href = `/report?url=${url}`;
+    if (url) {
+      setError(null);
+      window.location.href = `/report?url=${url}`;
+    } else {
+      invalidUrl();
+    }
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <label
-        for="default-search"
+        htmlFor="default-search"
         className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
       >
         Search
@@ -32,15 +47,14 @@ export function SearchBar() {
           <svg
             className="w-4 h-4 text-gray-500 dark:text-gray-400"
             aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 20 20"
           >
             <path
               stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
             />
           </svg>
@@ -60,6 +74,7 @@ export function SearchBar() {
           Search
         </button>
       </div>
+      {error && <span className="text-red-500">Invalid URL</span>}
     </form>
   );
 }

@@ -4,10 +4,10 @@ import "./chart.css";
 export function BarChart({ data }) {
   return (
     <div className="QKDQJb ">
-      <div class="cOTkPe">
-        <span class="DyTaId xTnkAf">
-          <span class="f49ZR">
-            <span class="Ykn2A LR2yK">36&nbsp;ms</span>
+      <div className="cOTkPe">
+        <span className="DyTaId xTnkAf">
+          <span className="f49ZR">
+            <span className="Ykn2A LR2yK">36&nbsp;ms</span>
           </span>
         </span>
       </div>
@@ -23,7 +23,7 @@ export function BarChart({ data }) {
         </span>
       </div>
 
-      <span class="DyTaId GQ6RS">
+      <span className="DyTaId GQ6RS">
         <img
           src="/icons/pines.svg"
           alt=""

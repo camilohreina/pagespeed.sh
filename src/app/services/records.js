@@ -37,6 +37,6 @@ export async function getRecordsByWebSite({ website }) {
 
     return metricsRecord;
   } catch (error) {
-    return error;
+    return { error: "Not found metrics" };
   }
 }
