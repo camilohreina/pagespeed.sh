@@ -16,7 +16,7 @@
   },
   "experimental_time_to_first_byte": {
     "title": "Time To First Byte (TTFB)",
-    "description": "TTFB is a foundational metric for measuring connection setup time and web server responsiveness in both the lab and the field. It helps identify when a web server is too slow to respond to requests.",
+    "description": "TTFB is a foundational metric for measuring connection setup time and web server responsiveness in both the lab and the field. ",
     "icon": "ttfb.png"
   },
   "first_contentful_paint": {
