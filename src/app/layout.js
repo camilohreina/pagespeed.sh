@@ -1,8 +1,8 @@
 import { ToggleMode } from "@/components/ToggleMode";
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Raleway } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Raleway({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Page Speed Stats",
@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${inter.className} dark:bg-black bg-slate-200`}>
         <main className="containerFluid mt-8">
-          <div className="flex justify-between items-center">
+          <div className="my-8 flex justify-between items-center">
             <img
               width={25}
               className="dark:invert"
