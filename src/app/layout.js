@@ -1,6 +1,7 @@
 import { ToggleMode } from "@/components/ToggleMode";
 import "./globals.css";
 import { Raleway } from "next/font/google";
+import Link from "next/link";
 
 const inter = Raleway({ subsets: ["latin"] });
 
@@ -21,7 +22,11 @@ export default function RootLayout({ children }) {
               src="/icons/icon-github.svg"
               alt="Github"
             />
-            <p className=" font-bold text-2xl  dark:text-white">PageSpeed.sh</p>
+            <Link href="http://localhost:3000/">
+              <p className=" font-bold text-2xl  dark:text-white">
+                PageSpeed.sh
+              </p>
+            </Link>
             <ToggleMode />
           </div>
           {children}
