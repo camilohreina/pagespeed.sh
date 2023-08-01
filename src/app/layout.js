@@ -1,7 +1,7 @@
-import { ToggleMode } from "@/components/ToggleMode";
+import { Header } from "@/components/Header";
 import "./globals.css";
 import { Raleway } from "next/font/google";
-import Link from "next/link";
+import { Footer } from "@/components/Footer";
 
 const inter = Raleway({ subsets: ["latin"] });
 
@@ -15,22 +15,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${inter.className} dark:bg-black bg-slate-200`}>
         <main className="containerFluid mt-8">
-          <div className="my-8 flex justify-between items-center">
-            <img
-              width={25}
-              className="dark:invert"
-              src="/icons/icon-github.svg"
-              alt="Github"
-            />
-            <Link href="http://localhost:3000/">
-              <p className=" font-bold text-2xl  dark:text-white">
-                PageSpeed.sh
-              </p>
-            </Link>
-            <ToggleMode />
-          </div>
+          <Header />
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   );

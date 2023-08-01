@@ -13,7 +13,7 @@ export default async function Report({ searchParams }) {
   return (
     <main className="mx-auto gap-8 containerFluid">
       <SearchBar />
-      <CoreVitals />
+      {data?.length && <CoreVitals />}
       {data?.length && (
         <div className="w-full my-8 items-stretch grid grid-cols-2 gap-8 m-auto justify-center ">
           {data.map((item) => (

@@ -9,7 +9,7 @@ export function CoreVitals() {
         animate={{ opacity: 1, transition: { delay: 1.8 } }}
         className="my-2 text-2xl font-bold tracking-tight text-violet-900 dark:text-violet-400"
       >
-        Web Core Vitals
+        Core Web Vitals
       </motion.p>
     </div>
   );

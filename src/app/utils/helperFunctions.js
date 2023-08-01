@@ -23,9 +23,9 @@ export function formatURL(url) {
     }
 
     // If it doesn't contain the subdomain "www.", add it
-    if (!urlObj.hostname.startsWith("www.")) {
+    /*  if (!urlObj.hostname.startsWith("www.")) {
       urlObj.hostname = "www." + urlObj.hostname;
-    }
+    } */
 
     // Return the formatted URL
     const formattedURL = urlObj.href;

@@ -29,6 +29,7 @@ export async function getRecordsByWebSite({ website }) {
     const data = await genericRequestCruxApi({
       origin: website,
     });
+    console.log(data);
     const { metrics } = data.record;
     let metricsRecord = [];
     for (let metric in metrics) {
