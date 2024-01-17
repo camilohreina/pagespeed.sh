@@ -1,15 +1,15 @@
-import { SearchBar } from "@/components/SearchBar";
-import { getRecordsByWebSite } from "../services/records";
-import { Card } from "@/components/Card";
-import { CoreVitals } from "@/components/CoreVitals";
-import ErrorPage from "@/components/ErrorPage";
+import { SearchBar } from '@/components/SearchBar';
+import { getRecordsByWebSite } from '../services/records';
+import { Card } from '@/components/Card';
+import { CoreVitals } from '@/components/CoreVitals';
+import ErrorPage from '@/components/ErrorPage';
 
 export default async function Report({ searchParams }) {
   let data = null;
   const { url } = searchParams;
 
   data = await getRecordsByWebSite({ website: url });
-
+  console.log(data);
   return (
     <main className="mx-auto gap-8 containerFluid">
       <SearchBar />
