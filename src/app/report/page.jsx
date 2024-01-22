@@ -9,7 +9,6 @@ export default async function Report({ searchParams }) {
   const { url } = searchParams;
 
   data = await getRecordsByWebSite({ website: url });
-  console.log(data);
   return (
     <main className="mx-auto gap-8 containerFluid">
       <SearchBar />

@@ -36,6 +36,36 @@ export default function RootLayout({ children }) {
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
+
+        <meta name="title" content="Insights page speed UX Tool" />
+        <meta
+          name="description"
+          content="Website that allows you to discover the performance of your website according to google (Crux API)."
+        />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://insights.xdiffernt.com" />
+        <meta property="og:title" content="Insights website UX Tool" />
+        <meta
+          property="og:description"
+          content="Website that allows you to discover the performance of your website according to google (Crux API)."
+        />
+        <meta
+          property="og:image"
+          content="https://insights.xdiffernt.com/og-insights.png"
+        />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://insights.xdiffernt.com" />
+        <meta property="twitter:title" content="Insights website UX Tool" />
+        <meta
+          property="twitter:description"
+          content="Website that allows you to discover the performance of your website according to google (Crux API)."
+        />
+        <meta
+          property="twitter:image"
+          content="https://insights.xdiffernt.com/og-insights.png"
+        />
       </head>
       <body className={`${inter.className} dark:bg-black bg-slate-200`}>
         <main className="containerFluid mt-8">
