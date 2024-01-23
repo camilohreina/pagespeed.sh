@@ -9,9 +9,10 @@ export default async function Report({ searchParams }) {
   const { url } = searchParams;
 
   data = await getRecordsByWebSite({ website: url });
+  console.log(url);
   return (
     <main className="mx-auto gap-8 containerFluid">
-      <SearchBar />
+      <SearchBar urlParam={url} />
       {data?.length && <CoreVitals />}
       {data?.length && (
         <div className="w-full my-8 items-stretch grid grid-cols-2 gap-8 m-auto justify-center ">

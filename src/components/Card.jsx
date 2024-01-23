@@ -1,7 +1,7 @@
-"use client";
-import { BarChart } from "./BarChart";
-import metrics from "../app/data/cwv.json";
-import { motion } from "framer-motion";
+'use client';
+import { BarChart } from './BarChart';
+import metrics from '../app/data/cwv.json';
+import { motion } from 'framer-motion';
 
 export function Card({ data }) {
   const item = metrics[data.key];
@@ -22,9 +22,12 @@ export function Card({ data }) {
           <h5 className="my-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">
             {item?.title}
           </h5>
-          <p className="mb-3 text-sm font-normal text-gray-700 dark:text-gray-400">
-            {item?.description}
-          </p>
+          <div className="min-h-[100px]">
+            <p className="mb-3 text-sm font-normal text-gray-700 dark:text-gray-400">
+              {item?.description}
+            </p>
+          </div>
+
           <div className="mt-12">
             <BarChart data={data} />
           </div>
